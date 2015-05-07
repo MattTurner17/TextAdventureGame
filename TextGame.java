@@ -886,6 +886,7 @@ public class TextGame {
 						System.out.println("Before You Can Move You Hear Panting Behind You. With Magic Flowing Through Your Veins You Feel No Fear...");
 						System.out.println("Turning Quickly You Start Saying The Words, But Before You Can Finish The Hound Runs Away Scared...");
 						System.out.println("It's Clear It Won't Be Bothering You Again.");
+						System.out.println("");
 						Area3Hound = false;
 					}
 					
@@ -4142,7 +4143,7 @@ public class TextGame {
 								System.out.println("Walk Through The Tunnel Slowly, When A Wall Begins To Rise From The Ground You Must Leap Forward To Avoid Being Trapped Forever.");
 								System.out.println("I Do Not Know How Many Walls There Are, But I Know There Is No Returning Once You Go Begin...'");
 								System.out.println("");
-								System.out.println("Knowing This Information, And That You Currently Have "+ MedallionPieces + ",  Are You Sure You Wish To Continue, Yes Or No?");
+								System.out.println("Knowing This Information, And That You Currently Have "+ MedallionPieces + " Medallion Pieces,  Are You Sure You Wish To Continue, Yes Or No?");
 								
 								boolean TunnelMade2 = false;
 								while(TunnelMade2 == false){
@@ -4179,7 +4180,6 @@ public class TextGame {
 				    	int Walls = 0;
 				    	long Time = 0;
 				    	int WallsBeaten = 0;
-				    	boolean Valid = true;
 				    	
 				    	if(Diff.equals("Easy")){
 				    		Walls = 4;
@@ -4191,6 +4191,8 @@ public class TextGame {
 				    	}
 
 					    while(game == true){
+					    	
+					    	boolean Valid = true;
 
 					    	System.out.println("");
 							System.out.println("Press Enter To Start Walking Slowly Forward...");
@@ -4691,15 +4693,15 @@ public class TextGame {
 												System.out.println("Two Days Worth Of Food Have Been Removed.");
 												Defense1Hit = true;
 												Food = Food - 2;
-												if(Food <= 0 && FoodWarning == false){
-													System.out.println("");
-													System.out.println("You Have Run Out Of Food. You Must Now Win This Game Without Losing Anymore Lives!!!");
-													FoodWarning = true;
-												}
 												if(Food <= 0 && FoodWarning == true){
 													System.out.println("You Have Run Out Of Food And Lost Another Life...");
 													System.out.println("Since You Can No Longer Pay The Price, You Must Pay With You Life!!");
 													InBattle = false;
+												}
+												if(Food <= 0 && FoodWarning == false){
+													System.out.println("");
+													System.out.println("You Have Run Out Of Food. You Must Now Win This Game Without Losing Anymore Lives!!!");
+													FoodWarning = true;
 												}
 											}
 											else if(Defense1Hit = true){
